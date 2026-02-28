@@ -1,12 +1,29 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	cmd "litevc/CMD"
+	"os"
+	"strings"
+)
 
 func main() {
-	var a float32
+	if len(os.Args) < 2 {
+		fmt.Println("Please use command litevc --help for more information")
+		return
+	}
 
-	fmt.Println("Masukkan angka")
-	fmt.Scan(&a)
+	command := strings.ToLower(os.Args[1])
 
-	fmt.Println(a)
+	switch command {
+	case "init":
+		{
+			fmt.Print("Init")
+			cmd.Init()
+		}
+	default:
+		{
+			fmt.Println("Please use command litevc --help for more information")
+		}
+	}
 }

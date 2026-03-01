@@ -1,5 +1,7 @@
 package cmd
 
-func Detect() {
+import "fmt"
 
+func Detect() {
+	fmt.Println("Scan file and add changes to staging area")
 }

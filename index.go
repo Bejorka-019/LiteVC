@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	cmd "litevc/CMD"
+	cmd "litevc/cmd"
 	"os"
 	"strings"
 )
@@ -20,6 +20,11 @@ func main() {
 		{
 			fmt.Print("Init")
 			cmd.Init()
+		}
+	case "detect":
+		{
+			fmt.Println("Scan file and add changes to staging area")
+			cmd.Detect()
 		}
 	default:
 		{
